@@ -1,0 +1,1447 @@
+{
+  "$schema": "https://web-api.clerk.chat/v2/pipeline-schema",
+  "name": "Apex Motors (v2.0)",
+  "nodes": [
+    {
+      "id": "1",
+      "type": "trigger",
+      "name": "Start",
+      "triggeredBy": [
+        "callStarted"
+      ],
+      "responseType": "json",
+      "staticId": 1,
+      "position": {
+        "x": 1693,
+        "y": 26
+      },
+      "isGoal": false,
+      "goalName": null
+    },
+    {
+      "id": "27",
+      "type": "voice_bot",
+      "name": "ask_logistics",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 27,
+      "position": {
+        "x": 538,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask if they'd like to wait at the dealership or drop off their vehicle. If it's a repair and they're dropping off, mention they may qualify for a complimentary loaner. Keep brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "25",
+      "type": "voice_bot",
+      "name": "ask_service_type",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 25,
+      "position": {
+        "x": 1000,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask if this is for routine maintenance (like an oil change or tire rotation) or a repair (like a check engine light or unusual noise). Keep it conversational and brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "23",
+      "type": "voice_bot",
+      "name": "ask_timeline",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 23,
+      "position": {
+        "x": 1462,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask if they're looking to purchase within the next week, within the month, or if they're still in the research phase. Keep it conversational and brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "21",
+      "type": "voice_bot",
+      "name": "ask_trade_in",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 21,
+      "position": {
+        "x": 1924,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask if they have a vehicle to trade in. Keep it conversational and brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "19",
+      "type": "voice_bot",
+      "name": "ask_budget",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 19,
+      "position": {
+        "x": 2386,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask what budget range they're comfortable with. Mention that inventory ranges from $30,000 to $150,000+. Keep it conversational and brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "17",
+      "type": "voice_bot",
+      "name": "ask_stock",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 17,
+      "position": {
+        "x": 2848,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask if they're interested in a new vehicle or certified pre-owned. Keep it conversational and brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "15",
+      "type": "voice_bot",
+      "name": "classify_intent",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 15,
+      "position": {
+        "x": 3310,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "Ask the customer if they're interested in purchasing a vehicle or scheduling service. Keep it conversational and brief (max 40 words).\n\nDO NOT ask any follow-up questions. DO NOT ask about body style, trim, features, or performance. Only ask the specific question provided.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": null,
+        "responseToolDescription": "",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "14",
+      "type": "voice_bot",
+      "name": "qualification_brain",
+      "triggeredBy": [
+        "unreadMessage.fromAll"
+      ],
+      "responseType": "json",
+      "staticId": 14,
+      "position": {
+        "x": 1693,
+        "y": 582
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "# TASK: Extract Qualification Data\n\nYou are working for Apex Motors, a luxury automotive dealership. Your job is to read the ENTIRE conversation history and extract all available data points.\n\nExtract ALL of the following variables from the conversation. ONLY extract if the customer EXPLICITLY states the information. If a data point hasn't been mentioned yet, set the value to \"UNSPECIFIED\". DO NOT infer, assume, or guess values based on context.\n\n---\n\n## CUSTOMER INTENT\n\n**stock_preference:**\n- \"NEW\" if customer says: \"new\", \"new car\", \"new vehicle\", \"brand new\", \"new model\"\n- \"PRE-OWNED\" if customer says: \"used\", \"pre-owned\", \"certified pre-owned\", \"second-hand\"\n- \"UNSPECIFIED\" if they only said \"car\" or \"vehicle\" without the word \"new\" or \"used\"\n\nCRITICAL: Search the ENTIRE conversation history. If the customer said \"new\" ANYWHERE in the conversation, extract stock_preference=\"NEW\".\n\nExamples:\n- \"I want to buy a car\" (first message) → \"UNSPECIFIED\"\n- \"I'd like to buy a new car\" (second message) → \"NEW\" (they said \"new\"!)\n- \"A new one\" → \"NEW\"\n\n---\n\n## CUSTOMER INFORMATION\n\n**customer_name:**\n- Full name if they introduced themselves (\"Hi, I'm John Smith\")\n- First name if only first name given\n- \"UNSPECIFIED\" if not mentioned\n\n**customer_email:**\n- Email address if they provide it during conversation\n- \"UNSPECIFIED\" if not mentioned\n- Note: Unlikely in voice calls, but capture if mentioned\n\n---\n\n## IF CUSTOMER_INTENT IS \"SALES\":\n\n**stock_preference:**\n- \"NEW\" for new vehicles (only if explicitly mentioned: \"new car\", \"new vehicle\", \"brand new\")\n- \"PRE-OWNED\" for used or certified pre-owned vehicles (only if explicitly mentioned: \"used\", \"pre-owned\", \"certified pre-owned\")\n- \"UNSPECIFIED\" if not mentioned or just said \"car\" or \"vehicle\" without specifying\n- Example: \"I want to buy a car\" → stock_preference = \"UNSPECIFIED\" (not specified)\n- Example: \"I want a new car\" → stock_preference = \"NEW\"\n\n**budget_range:**\n- Their stated budget as a string (e.g., \"$60,000\", \"$50K-70K\", \"under $100,000\")\n- \"UNSPECIFIED\" if not mentioned\n- CRITICAL: Extract the value if the customer states a numeric value, spelled-out number, or formatted price for their budget.\n- DO NOT infer budget from vehicle type (luxury, economy, new, used)\n- Examples that DO NOT contain budget: \"I want to buy a car\", \"I need a new vehicle\", \"Looking for something nice\"\n\n**has_trade_in:**\n- \"YES\" if they have a vehicle to trade in\n- \"NO\" if they explicitly say no trade-in or paying cash with no trade\n- \"UNSPECIFIED\" if not mentioned\n\n**timeline:**\n- \"THIS_WEEK\" if buying within the next 7 days\n- \"THIS_MONTH\" if buying within 1-4 weeks\n- \"NEXT_MONTH_OR_TWO\" if buying within 2-3 months\n- \"RESEARCHING\" if no specific timeline or 4+ months out\n- \"UNSPECIFIED\" if not mentioned\n\n---\n\n## IF CUSTOMER_INTENT IS \"SERVICE\":\n\n**job_type:**\n- \"MAINTENANCE\" for routine service (oil change, tire rotation, inspection)\n- \"REPAIR\" for fixing problems (check engine light, brakes, unusual noises)\n- \"UNSPECIFIED\" if not mentioned\n\n**service_lane:**\n- \"EXPRESS\" if job_type is \"MAINTENANCE\"\n- \"DIAGNOSTIC\" if job_type is \"REPAIR\"\n- \"UNSPECIFIED\" if job_type is \"UNSPECIFIED\"\n\n**logistics:**\n- \"WAIT\" if customer wants to wait at dealership\n- \"DROP_OFF\" if customer wants to drop off vehicle\n- \"UNSPECIFIED\" if not mentioned\n\n**loaner_eligible:**\n- \"YES\" if job_type is \"REPAIR\" AND logistics is \"DROP_OFF\"\n- \"NO\" otherwise\n- \"UNSPECIFIED\" if we don't know yet\n\n---\n\n## IMPORTANT RULES:\n\n1. **Extract ALL variables on every message** - Even if most are \"UNSPECIFIED\"\n\n2. **Read the ENTIRE conversation history** - Customer may have given multiple answers\n\n3. **Handle out-of-order answers** - If they say \"I want a new car with a trade-in for $50K this week\", extract all four: stock_preference=\"NEW\", has_trade_in=\"YES\", budget_range=\"$50,000\", timeline=\"THIS_WEEK\"\n\n4. **Intent Switching**: If the customer explicitly changes their goal (e.g., \"Forget the car, I need an oil change\"), update customer_intent immediately. Retain all previously extracted variables from the former intent. The active path is determined solely by the current customer_intent.\n\n5. **CRITICAL - State Persistence**: This is THE MOST IMPORTANT RULE. Once a variable has a value other than \"UNSPECIFIED\", you MUST keep that value in ALL future extractions unless the customer explicitly contradicts it.\n\nExamples of what KEEPS the value:\n- stock_preference = \"NEW\", user says \"Yes\" → KEEP stock_preference = \"NEW\"\n- stock_preference = \"PRE-OWNED\", user says \"Sounds good\" → KEEP stock_preference = \"PRE-OWNED\"  \n- budget_range = \"$50,000\", user says \"Okay\" → KEEP budget_range = \"$50,000\"\n\nExamples of what CHANGES the value (explicit contradiction):\n- stock_preference = \"NEW\", user says \"Actually, I want used\" → CHANGE to stock_preference = \"PRE-OWNED\"\n- budget_range = \"$50K\", user says \"No, $70K\" → CHANGE to budget_range = \"$70,000\"\n\nIf the current message doesn't mention a variable, but you extracted it in a previous message, YOU MUST COPY THE PREVIOUS VALUE. Do NOT reset to \"UNSPECIFIED\".\n\n6. **\"UNSPECIFIED\" means \"not mentioned yet\"** - Not \"unknown\" or \"not applicable\"\n\n7. **Service_lane is auto-calculated** - Don't ask about it, just derive from job_type\n\n8. **Loaner_eligible is auto-calculated** - Don't ask about it, just derive from job_type + logistics\n\n9. **Passive extraction only for name and email** - Extract if mentioned naturally, don't force it.\n\n---\n\nDo NOT engage in conversation. Do NOT ask questions. Just extract data and return the JSON.",
+        "responseSchema": {
+          "type": "object",
+          "required": [
+            "job_type",
+            "timeline",
+            "logistics",
+            "budget_range",
+            "has_trade_in",
+            "service_lane",
+            "customer_name",
+            "customer_email",
+            "customer_intent",
+            "loaner_eligible",
+            "stock_preference"
+          ],
+          "properties": {
+            "job_type": {
+              "enum": [
+                "MAINTENANCE",
+                "REPAIR",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "Type of service needed (SERVICE path only)"
+            },
+            "timeline": {
+              "enum": [
+                "THIS_WEEK",
+                "THIS_MONTH",
+                "NEXT_MONTH_OR_TWO",
+                "RESEARCHING",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "When customer wants to purchase (SALES path)"
+            },
+            "logistics": {
+              "enum": [
+                "WAIT",
+                "DROP_OFF",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "Whether customer waits or drops off vehicle (SERVICE path)"
+            },
+            "budget_range": {
+              "type": "string",
+              "description": "Customer's stated budget (e.g., \"$60,000\")"
+            },
+            "has_trade_in": {
+              "enum": [
+                "YES",
+                "NO",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "Whether customer has a vehicle to trade in (SALES path)"
+            },
+            "service_lane": {
+              "enum": [
+                "EXPRESS",
+                "DIAGNOSTIC",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "Auto-calculated from job_type"
+            },
+            "customer_name": {
+              "type": "string",
+              "description": "Customer's full name if mentioned"
+            },
+            "customer_email": {
+              "type": "string",
+              "description": "Customer's email if mentioned"
+            },
+            "customer_intent": {
+              "enum": [
+                "SALES",
+                "SERVICE",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "Customer's intent - SALES for buying, SERVICE for maintenance/repair"
+            },
+            "loaner_eligible": {
+              "enum": [
+                "YES",
+                "NO",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "Auto-calculated: YES if REPAIR + DROP_OFF"
+            },
+            "stock_preference": {
+              "enum": [
+                "NEW",
+                "PRE-OWNED",
+                "UNSPECIFIED"
+              ],
+              "type": "string",
+              "description": "New vehicle or pre-owned (SALES path only)"
+            }
+          }
+        },
+        "responseToolName": "extraction_complete",
+        "responseToolDescription": "Call this function immediately after extracting all variables. This function should be called on EVERY user message to update the extraction state.",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "11",
+      "type": "tool_runner",
+      "name": "end_call",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 11,
+      "position": {
+        "x": 271,
+        "y": 1302
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "voice_call",
+        "config": {},
+        "enabledTools": [
+          "hangup"
+        ],
+        "tools": {}
+      }
+    },
+    {
+      "id": "9",
+      "type": "voice_bot",
+      "name": "email_dispatch",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 9,
+      "position": {
+        "x": 50,
+        "y": 942
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "actionType": "prompt",
+        "prompt": "You are handling the final step of qualifying a lead for Apex Motors dealership.\n\nYour job:\n1. Check if qualification is complete (either SALES or SERVICE path)\n2. Send an email to the manager with the lead details\n3. Thank the customer and end the conversation professionally\n\nUse the summary_email tool to send the email with all qualification variables.\n\nAfter sending the email, say to the customer:\n\n\"Perfect! I've sent your information to our team. Someone will reach out to you shortly. Thank you for calling Apex Motors!\"\n\nIf customer_name is available, personalize it: \"Thank you for calling Apex Motors, [Name]!\"\n\nKeep it brief and professional. After delivering this message, hand off to the next node.",
+        "responseSchema": {
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "responseToolName": "email_sent",
+        "responseToolDescription": "After you have spoken the closing message to the customer, move to the next node.",
+        "allowInterruptions": true,
+        "disableRepeatOnSilence": false,
+        "shouldLoop": true,
+        "waitForSpeech": false,
+        "inactivity": {},
+        "ivr": {
+          "name": null,
+          "description": null,
+          "canNavigateToNode": false,
+          "canNavigateFromNode": false
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "tool_runner",
+      "name": "greeting",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "json",
+      "staticId": 4,
+      "position": {
+        "x": 1693,
+        "y": 292
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "voice_call",
+        "config": {},
+        "enabledTools": [
+          "say"
+        ],
+        "tools": {
+          "say": {
+            "name": "",
+            "paramValues": {
+              "text": {
+                "type": "fixed",
+                "value": "Hello! This is Sam from Apex Motors.  How can I help you today?"
+              },
+              "waitForSpeech": {
+                "type": "fixed",
+                "value": false
+              },
+              "allowInterruptions": {
+                "type": "fixed",
+                "value": true
+              },
+              "disableRepeatOnSilence": {
+                "type": "fixed",
+                "value": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "28",
+      "type": "tool_provider",
+      "name": "search_07",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 28,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "26",
+      "type": "tool_provider",
+      "name": "search_06",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 26,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "24",
+      "type": "tool_provider",
+      "name": "search_05",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 24,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "22",
+      "type": "tool_provider",
+      "name": "search_04",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 22,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "20",
+      "type": "tool_provider",
+      "name": "search_03",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 20,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "18",
+      "type": "tool_provider",
+      "name": "search_02",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 18,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "16",
+      "type": "tool_provider",
+      "name": "search_01",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 16,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "knowledge_base",
+        "config": {},
+        "enabledTools": [
+          "search"
+        ],
+        "tools": {
+          "search": {
+            "name": "search_knowledge_base",
+            "paramValues": {
+              "query": {
+                "name": "query",
+                "type": "llm_inferred"
+              },
+              "sourceIds": [
+                {
+                  "type": "fixed",
+                  "value": 6692
+                }
+              ]
+            },
+            "llmParameters": {
+              "query": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": ""
+                },
+                "description": ""
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    },
+    {
+      "id": "10",
+      "type": "tool_provider",
+      "name": "summary_email",
+      "triggeredBy": [
+        "unreadMessage.fromAny"
+      ],
+      "responseType": "tool_call_result",
+      "staticId": 10,
+      "position": {
+        "x": 156,
+        "y": 140
+      },
+      "isGoal": false,
+      "goalName": null,
+      "nodeConfig": {
+        "type": "email_tools",
+        "config": {},
+        "enabledTools": [
+          "send_email"
+        ],
+        "tools": {
+          "send_email": {
+            "name": "send_lead_email",
+            "paramValues": {
+              "body": {
+                "name": "body",
+                "type": "llm_inferred"
+              },
+              "subject": {
+                "type": "fixed",
+                "value": "New Lead from Apex Motors AI Agent"
+              },
+              "recipients": {
+                "type": "array",
+                "items": [
+                  {
+                    "type": "fixed",
+                    "value": "hello@yonal.io"
+                  }
+                ]
+              }
+            },
+            "llmParameters": {
+              "body": {
+                "type": "llm_inferred",
+                "schema": {
+                  "type": "string",
+                  "description": "You are writing an email to a dealership manager summarizing a qualified lead from a phone call.\n\nIMPORTANT: Check the customer_intent variable to determine which email section to generate.\n\nIMPORTANT: If any variable equals exactly \"UNSPECIFIED\", treat it as missing information. Do not write the word \"UNSPECIFIED\" anywhere in the final email. If a required field in the summary is \"UNSPECIFIED\", write \"Not provided\" or omit the detail naturally.\n\nWrite a professional, well-formatted email. Use this structure:\n\n---\n\nCUSTOMER INFORMATION\nName: [Use customer_name unless it is \"UNSPECIFIED\", otherwise \"Not provided\"]\nEmail: [Use customer_email unless it is \"UNSPECIFIED\", otherwise \"Not provided\"]\n\n---\n\nIF customer_intent = \"SALES\":\n\nSALES LEAD SUMMARY\nStock Preference: [NEW or PRE-OWNED]\nBudget Range: [their stated budget]\nTrade-In: [YES or NO]\nTimeline: [THIS_WEEK, THIS_MONTH, NEXT_MONTH_OR_TWO, or RESEARCHING]\nLead Temperature: [HOT if THIS_WEEK, WARM otherwise]\n\nSummary: [Write 1-2 natural sentences describing what the customer wants. Example: \"The customer is interested in purchasing a new vehicle with a budget of $60,000 and has a trade-in. They are looking to buy this week, making this a hot lead.\"]\n\nNEXT STEPS\n[If timeline is THIS_WEEK: \"Follow up within 1 hour\"]\n[If timeline is THIS_MONTH or NEXT_MONTH_OR_TWO or RESEARCHING: \"Follow up within 24 hours\"]\n\n---\n\nIF customer_intent = \"SERVICE\":\n\nSERVICE REQUEST SUMMARY\nType of Service: [MAINTENANCE or REPAIR]\nService Lane: [EXPRESS or DIAGNOSTIC]\nCustomer Preference: [WAIT or DROP_OFF]\nLoaner Vehicle: [Only mention if loaner_eligible is YES - say \"Eligible\"]\n\nSummary: [Write 1-2 natural sentences describing the service need. Example: \"The customer needs a repair for a check engine light. They prefer to drop off their vehicle and qualify for a complimentary loaner vehicle.\"]\n\nNEXT STEPS\nContact customer to schedule appointment\n\n---\n\nSent from Sam - Apex Motors AI Assistant\nGenerated: [Use current date and time in format: \"March 17, 2026 at 2:00 PM\"]"
+                },
+                "description": "You are writing an email to a dealership manager summarizing a qualified lead from a phone call.\n\nIMPORTANT: Check the customer_intent variable to determine which email section to generate.\n\nIMPORTANT: If any variable equals exactly \"UNSPECIFIED\", treat it as missing information. Do not write the word \"UNSPECIFIED\" anywhere in the final email. If a required field in the summary is \"UNSPECIFIED\", write \"Not provided\" or omit the detail naturally.\n\nWrite a professional, well-formatted email. Use this structure:\n\n---\n\nCUSTOMER INFORMATION\nName: [Use customer_name unless it is \"UNSPECIFIED\", otherwise \"Not provided\"]\nEmail: [Use customer_email unless it is \"UNSPECIFIED\", otherwise \"Not provided\"]\n\n---\n\nIF customer_intent = \"SALES\":\n\nSALES LEAD SUMMARY\nStock Preference: [NEW or PRE-OWNED]\nBudget Range: [their stated budget]\nTrade-In: [YES or NO]\nTimeline: [THIS_WEEK, THIS_MONTH, NEXT_MONTH_OR_TWO, or RESEARCHING]\nLead Temperature: [HOT if THIS_WEEK, WARM otherwise]\n\nSummary: [Write 1-2 natural sentences describing what the customer wants. Example: \"The customer is interested in purchasing a new vehicle with a budget of $60,000 and has a trade-in. They are looking to buy this week, making this a hot lead.\"]\n\nNEXT STEPS\n[If timeline is THIS_WEEK: \"Follow up within 1 hour\"]\n[If timeline is THIS_MONTH or NEXT_MONTH_OR_TWO or RESEARCHING: \"Follow up within 24 hours\"]\n\n---\n\nIF customer_intent = \"SERVICE\":\n\nSERVICE REQUEST SUMMARY\nType of Service: [MAINTENANCE or REPAIR]\nService Lane: [EXPRESS or DIAGNOSTIC]\nCustomer Preference: [WAIT or DROP_OFF]\nLoaner Vehicle: [Only mention if loaner_eligible is YES - say \"Eligible\"]\n\nSummary: [Write 1-2 natural sentences describing the service need. Example: \"The customer needs a repair for a check engine light. They prefer to drop off their vehicle and qualify for a complimentary loaner vehicle.\"]\n\nNEXT STEPS\nContact customer to schedule appointment\n\n---\n\nSent from Sam - Apex Motors AI Assistant\nGenerated: [Use current date and time in format: \"March 17, 2026 at 2:00 PM\"]"
+              }
+            },
+            "llmParameterSpecification": "explicit"
+          }
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "name": "quali_intent",
+      "sourceNode": "14",
+      "destinationNode": "15",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "===": [
+                {
+                  "var": "14.customer_intent"
+                },
+                "UNSPECIFIED"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": null,
+      "sourceNode": "9",
+      "destinationNode": "10",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "10",
+      "destinationNode": "9",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "1",
+      "destinationNode": "4",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "25",
+      "destinationNode": "26",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "28",
+      "destinationNode": "27",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "17",
+      "destinationNode": "18",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "15",
+      "destinationNode": "16",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "26",
+      "destinationNode": "25",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": "quali_logistics",
+      "sourceNode": "14",
+      "destinationNode": "27",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "14.customer_intent"
+                    },
+                    "SERVICE"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.job_type"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "===": [
+                    {
+                      "var": "14.logistics"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": null,
+      "sourceNode": "20",
+      "destinationNode": "19",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "23",
+      "destinationNode": "24",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "19",
+      "destinationNode": "20",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": "quali_timeline",
+      "sourceNode": "14",
+      "destinationNode": "23",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "14.customer_intent"
+                    },
+                    "SALES"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.stock_preference"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.budget_range"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.has_trade_in"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "===": [
+                    {
+                      "var": "14.timeline"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": null,
+      "sourceNode": "18",
+      "destinationNode": "17",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "24",
+      "destinationNode": "23",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "21",
+      "destinationNode": "22",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "22",
+      "destinationNode": "21",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": "quali_email",
+      "sourceNode": "14",
+      "destinationNode": "9",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "or": [
+                {
+                  "and": [
+                    {
+                      "===": [
+                        {
+                          "var": "14.customer_intent"
+                        },
+                        "SALES"
+                      ]
+                    },
+                    {
+                      "!==": [
+                        {
+                          "var": "14.stock_preference"
+                        },
+                        "UNSPECIFIED"
+                      ]
+                    },
+                    {
+                      "!==": [
+                        {
+                          "var": "14.budget_range"
+                        },
+                        "UNSPECIFIED"
+                      ]
+                    },
+                    {
+                      "!==": [
+                        {
+                          "var": "14.has_trade_in"
+                        },
+                        "UNSPECIFIED"
+                      ]
+                    },
+                    {
+                      "!==": [
+                        {
+                          "var": "14.timeline"
+                        },
+                        "UNSPECIFIED"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "===": [
+                        {
+                          "var": "14.customer_intent"
+                        },
+                        "SERVICE"
+                      ]
+                    },
+                    {
+                      "!==": [
+                        {
+                          "var": "14.job_type"
+                        },
+                        "UNSPECIFIED"
+                      ]
+                    },
+                    {
+                      "!==": [
+                        {
+                          "var": "14.logistics"
+                        },
+                        "UNSPECIFIED"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "quali_service",
+      "sourceNode": "14",
+      "destinationNode": "25",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "14.customer_intent"
+                    },
+                    "SERVICE"
+                  ]
+                },
+                {
+                  "===": [
+                    {
+                      "var": "14.job_type"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "quali_trade_in",
+      "sourceNode": "14",
+      "destinationNode": "21",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "14.customer_intent"
+                    },
+                    "SALES"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.stock_preference"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.budget_range"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "===": [
+                    {
+                      "var": "14.has_trade_in"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "quali_budget",
+      "sourceNode": "14",
+      "destinationNode": "19",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "14.customer_intent"
+                    },
+                    "SALES"
+                  ]
+                },
+                {
+                  "!==": [
+                    {
+                      "var": "14.stock_preference"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                },
+                {
+                  "===": [
+                    {
+                      "var": "14.budget_range"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "quali_stock",
+      "sourceNode": "14",
+      "destinationNode": "17",
+      "sourceVariables": null,
+      "filters": [
+        {
+          "type": "rule",
+          "config": {
+            "syntax": {
+              "and": [
+                {
+                  "===": [
+                    {
+                      "var": "14.customer_intent"
+                    },
+                    "SALES"
+                  ]
+                },
+                {
+                  "===": [
+                    {
+                      "var": "14.stock_preference"
+                    },
+                    "UNSPECIFIED"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": null,
+      "sourceNode": "27",
+      "destinationNode": "28",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "16",
+      "destinationNode": "15",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "4",
+      "destinationNode": "14",
+      "sourceVariables": null,
+      "filters": []
+    },
+    {
+      "name": null,
+      "sourceNode": "9",
+      "destinationNode": "11",
+      "sourceVariables": null,
+      "filters": []
+    }
+  ]
+}
