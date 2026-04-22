@@ -21,7 +21,7 @@ A Python application that answers a real phone number, has a voice conversation 
 | **Web framework** | FastAPI | Handles Twilio webhooks, async-native, minimal boilerplate | Free |
 | **Phone/voice** | Twilio Voice API | Industry standard, Python SDK, handles SIP/PSTN | ~$1/mo for number + $0.02/min |
 | **Speech-to-text** | Deepgram | Faster and cheaper than Twilio STT, real-time WebSocket streaming | Free tier: 45,000 min/year |
-| **Text-to-speech** | ElevenLabs | Natural voice quality, "Mark" voice matches your existing agent | Free tier: 10K chars/mo (~10 calls). $5/mo starter for more |
+| **Text-to-speech** | ElevenLabs | Natural voice quality, "Eric" (premade, free tier) used for Sam | Free tier: 10K chars/mo (~10 calls). $5/mo starter for more |
 | **LLM (brain)** | OpenAI GPT-4.1-mini | Proven in your Clerk Chat tests, structured output mode | ~$0.01 per call |
 | **LLM (voice nodes)** | OpenAI GPT-4.1-mini | Same model, simpler prompts, fast enough for classification | Same |
 | **Knowledge base** | ChromaDB (local) | Lightweight vector DB, runs in-process, no server needed | Free |
@@ -203,9 +203,10 @@ apex-motors-voice-agent/
 - Create GitHub repo, virtual environment, project structure
 - Sign up: OpenAI API, Twilio, Deepgram, ElevenLabs
 - Install ngrok, configure tunnel
-- Build FastAPI app with single endpoint
-- Twilio answers a call → plays hardcoded "Hello" via TTS → hangs up
-- **Milestone: Phone rings, you hear a voice, call ends**
+- ✅ Build FastAPI app with single endpoint (`app/main.py`)
+- ✅ `app/speech/tts.py` — ElevenLabs TTS wrapper
+- Twilio answers a call → plays hardcoded greeting via TTS → hangs up
+- **Milestone: Phone rings, you hear a voice, call ends** ← in progress (ngrok + Twilio config remaining)
 
 **Day 3-4: STT + LLM Integration**
 - Connect Deepgram WebSocket for real-time STT
@@ -291,7 +292,7 @@ apex-motors-voice-agent/
 ### ElevenLabs
 - [ ] Create account at elevenlabs.io
 - [ ] Free tier: 10,000 characters/month
-- [ ] Find or clone a voice similar to "Mark" (professional male)
+- [x] Find or clone a voice similar to "Mark" (professional male) — using Eric (`cjVigY5qzO86Huf0OWal`), premade/free
 - [ ] Generate API key
 - [ ] Note: Starter plan ($5/mo) gives 30,000 chars if free tier runs out
 
