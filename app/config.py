@@ -1,6 +1,5 @@
+# app/config.py
 # Loads all API keys and config values from .env into module-level constants.
-# Import this anywhere you need a key: from app import config;
-# config.OPENAI_API_KEY
 
 import os
 from dotenv import load_dotenv

@@ -1,6 +1,5 @@
+# app/speech/tts.py
 # Wraps the ElevenLabs SDK to convert text into audio bytes.
-# Used by main.py at startup to generate greeting.mp3
-# and to generate per-response audio over WebSocket.
 
 from elevenlabs.client import ElevenLabs
 from app import config
