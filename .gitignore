@@ -8,3 +8,4 @@ data/chroma/
 node_modules/
 NOTES.md
 static/
+.vscode/
