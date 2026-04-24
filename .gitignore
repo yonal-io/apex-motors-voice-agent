@@ -7,5 +7,6 @@ data/chroma/
 .DS_Store
 node_modules/
 NOTES.md
+EXPLAIN.md
 static/
 .vscode/
